@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
+const { pathToFileURL } = require("url");
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -8,6 +9,7 @@ function createWindow() {
     resizable: true,
     autoHideMenuBar: true,
     frame: false, // <- Fensterrahmen entfernen für eigene Controls
+    icon: "../frontend/public/logo.png",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,

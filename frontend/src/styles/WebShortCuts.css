@@ -1,4 +1,39 @@
 .webShortCuts {
-  width: 100%;
-  background-color: var(--background-800);
+  width: 80%;
+  /* background-color: var(--background-900); */
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  gap: 1rem;
+}
+
+.webShortCuts a {
+  width: min-content;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.webShortCuts a img {
+  height: 15px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer !important;
+}
+
+.webShortCuts button {
+  height: 25px !important;
+  width: 25px !important;
+  width: "1" 5px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.webShortCuts button:hover {
+  background-color: var(--background-800) !important;
 }

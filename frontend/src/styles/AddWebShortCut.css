@@ -1,0 +1,50 @@
+.addWebShortCut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  height: 150px;
+  width: 500px;
+  background-color: var(--background-950);
+
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 250px);
+
+  outline: 2px solid var(--background-700);
+  border-radius: 5px;
+}
+
+.addWebShortCut input {
+  width: 90%;
+  background-color: transparent;
+  outline: 2px solid var(--background-700);
+  color: var(--text-100);
+  border: 0;
+  border-radius: 5px;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.addWebShortCut button {
+  height: 30px;
+  width: 150px;
+  border-radius: 5px;
+  outline: 2px solid var(--background-800);
+  border: 0;
+  background-color: transparent;
+  color: var(--text-100);
+  font-weight: bold;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.addWebShortCut button:nth-of-type(2) {
+  background-color: var(--background-800);
+}
+
+.addWebShortCut button:hover {
+  background-color: var(--background-700);
+  outline: 2px solid var(--background-700);
+}

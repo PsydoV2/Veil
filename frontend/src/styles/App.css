@@ -60,6 +60,7 @@
   --accent-950: #030c17;
 
   font-family: Arial, Helvetica, sans-serif;
+  transition: 0.2s ease-in-out 0s;
 }
 
 body {

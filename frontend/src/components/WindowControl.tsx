@@ -8,7 +8,11 @@ import {
 import WebShortCuts from "./WebShortCuts";
 import "../styles/WindowControl.css";
 
-export default function WindowControls() {
+interface Props {
+  openAddWebShortCut: () => void;
+}
+
+export default function WindowControls(props: Props) {
   const [isMaximized, setIsMaximized] = useState(false);
 
   useEffect(() => {
@@ -24,12 +28,11 @@ export default function WindowControls() {
 
   return (
     <div className="windowcontrol">
-      <div>
-        <img src="logo.png" alt="" />
-        <h4>VEIL</h4>
-      </div>
+      <img src="logo.png" alt="Browser Logo" />
 
-      <WebShortCuts></WebShortCuts>
+      <WebShortCuts
+        openAddWebShortCut={props.openAddWebShortCut}
+      ></WebShortCuts>
 
       <div>
         <button onClick={handleMinimize}>
