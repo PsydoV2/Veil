@@ -58,6 +58,8 @@
   --accent-800: #0a2f5c;
   --accent-900: #05172e;
   --accent-950: #030c17;
+
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -65,4 +67,81 @@ body {
   min-width: 100%;
   margin: 0;
   background-color: var(--background-950);
+}
+
+.windowcontrol {
+  width: 100%;
+  height: 35px;
+  -webkit-app-region: drag;
+  user-select: none;
+  background: transparent;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.windowcontrol button {
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--primary-200);
+  outline: 0;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.windowcontrol button:hover {
+  color: var(--primary-300);
+  background-color: var(--background-900);
+}
+
+.windowcontrol img {
+  height: 30px;
+}
+
+.windowcontrol div {
+  width: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  /* background-color: red; */
+}
+
+.windowcontrol h4 {
+  color: var(--primary-200);
+  margin-left: -40px;
+}
+
+.searchBar {
+  width: calc(100% - 50px);
+  height: 25px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: var(--background-800);
+  overflow: hidden;
+}
+
+.searchBar input {
+  width: 100%;
+  padding: 0 10px;
+  background-color: transparent;
+  height: 100%;
+  outline: 0;
+  border: 0;
+  color: var(--text-100);
+}
+
+.searchBar input::placeholder {
+  color: var(--text-300);
+}
+
+.webShortCuts {
+  width: 100%;
+  background-color: var(--background-800);
 }
