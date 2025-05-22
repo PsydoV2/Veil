@@ -6,6 +6,7 @@ import {
   FaWindowRestore,
 } from "react-icons/fa6";
 import WebShortCuts from "./WebShortCuts";
+import "../styles/WindowControl.css";
 
 export default function WindowControls() {
   const [isMaximized, setIsMaximized] = useState(false);

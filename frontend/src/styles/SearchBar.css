@@ -1,0 +1,23 @@
+.searchBar {
+  width: calc(100% - 50px);
+  height: 25px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: var(--background-800);
+  overflow: hidden;
+}
+
+.searchBar input {
+  width: 100%;
+  padding: 0 10px;
+  background-color: transparent;
+  height: 100%;
+  outline: 0;
+  border: 0;
+  color: var(--text-100);
+}
+
+.searchBar input::placeholder {
+  color: var(--text-300);
+}

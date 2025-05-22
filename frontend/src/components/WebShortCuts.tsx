@@ -1,3 +1,5 @@
+import "../styles/WebShortCuts.css";
+
 export default function WebShortCuts() {
   return (
     <div className="webShortCuts">

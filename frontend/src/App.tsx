@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/App.css";
 import SearchBar from "./components/SearchBar";
 import WindowControls from "./components/WindowControl";
 
