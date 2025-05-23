@@ -1,30 +1,28 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
-const { pathToFileURL } = require("url");
 
 function createWindow() {
+  const userDataPath = app.getPath("userData");
+
   const win = new BrowserWindow({
     width: 1000,
     height: 800,
     resizable: true,
-    autoHideMenuBar: true,
-    frame: false, // <- Fensterrahmen entfernen für eigene Controls
-    icon: "../frontend/public/logo.png",
+    frame: false,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
       nodeIntegration: false,
+      sandbox: false,
+      additionalArguments: [`--userDataPath=${userDataPath}`],
     },
   });
 
-  win.maximize(); // direkt maximieren
   win.loadURL("http://localhost:5173");
 
-  // Optional: Zustand an Renderer schicken
   win.on("maximize", () => win.webContents.send("window-state", "maximized"));
   win.on("unmaximize", () => win.webContents.send("window-state", "restored"));
 
-  // Window-Steuerungen vom Renderer empfangen
   ipcMain.on("window-control", (_, command) => {
     if (command === "minimize") win.minimize();
     else if (command === "maximize") win.maximize();
