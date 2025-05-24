@@ -4,9 +4,19 @@ interface WebShortCut {
   imgUrl: string;
 }
 
+interface AppSettings {
+  theme: "light" | "dark";
+}
+
+interface AppData {
+  webShortCuts: WebShortCut[];
+  settings: AppSettings;
+}
+
 interface ElectronAPI {
-  getWebShortCuts: () => WebShortCut[];
-  addWebShortCut: (shortcut: WebShortCut) => void;
+  getAllData: () => AppData;
+  updateWebShortCuts: (shortcuts: WebShortCut[]) => void;
+  updateSettings: (settings: AppSettings) => void;
   controlWindow: (
     command: "minimize" | "maximize" | "unmaximize" | "close"
   ) => void;

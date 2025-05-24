@@ -9,6 +9,8 @@ function createWindow() {
     height: 800,
     resizable: true,
     frame: false,
+    minWidth: 500,
+    minHeight: 500,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,

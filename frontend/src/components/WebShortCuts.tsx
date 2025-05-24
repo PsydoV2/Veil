@@ -1,28 +1,22 @@
+import { useAppData } from "../context/AppDataContext";
 import "../styles/WebShortCuts.css";
-import { useState, useEffect } from "react";
 import { FaPlus } from "react-icons/fa6";
 
-interface Props {
+export default function WebShortCuts({
+  openAddWebShortCut,
+}: {
   openAddWebShortCut: () => void;
-}
-
-export default function WebShortCuts(props: Props) {
-  const [webShortCuts, setWebShortCuts] = useState<WebShortCut[]>([]);
-
-  useEffect(() => {
-    const shortcuts = window.electronAPI.getWebShortCuts();
-    setWebShortCuts(shortcuts);
-  }, []);
+}) {
+  const { data } = useAppData();
 
   return (
     <div className="webShortCuts">
-      {webShortCuts.map((webShortCut) => (
-        <a href={webShortCut.url} key={webShortCut.id}>
-          <img src={webShortCut.imgUrl} alt="WebIcon" />
+      {data.webShortCuts.map((s) => (
+        <a href={s.url} key={s.id}>
+          <img src={s.imgUrl} alt="WebIcon" />
         </a>
       ))}
-
-      <button onClick={props.openAddWebShortCut}>
+      <button onClick={openAddWebShortCut}>
         <FaPlus />
       </button>
     </div>

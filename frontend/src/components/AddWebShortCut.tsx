@@ -1,23 +1,26 @@
+import { useAppData } from "../context/AppDataContext";
 import "../styles/AddWebShortCut.css";
 import { useState } from "react";
 
-interface Props {
+export default function AddWebShortCut({
+  closeAddWebShortCut,
+}: {
   closeAddWebShortCut: () => void;
-}
-
-export default function AddWebShortCut(props: Props) {
+}) {
   const [url, setUrl] = useState("");
+  const { data, updateWebShortCuts } = useAppData();
 
   function AddWebShortCutHandler() {
     if (!url) return;
 
-    window.electronAPI.addWebShortCut({
-      url: url,
+    const newShortCut = {
+      url,
       imgUrl: `https://www.google.com/s2/favicons?sz=64&domain_url=${url}`,
-      id: 0,
-    });
+      id: Date.now(),
+    };
 
-    props.closeAddWebShortCut();
+    updateWebShortCuts([...data.webShortCuts, newShortCut]);
+    closeAddWebShortCut();
   }
 
   return (
@@ -28,7 +31,7 @@ export default function AddWebShortCut(props: Props) {
         value={url}
         onChange={(e) => setUrl(e.target.value)}
       />
-      <button onClick={props.closeAddWebShortCut}>Cancel</button>
+      <button onClick={closeAddWebShortCut}>Cancel</button>
       <button onClick={AddWebShortCutHandler}>Save</button>
     </div>
   );
