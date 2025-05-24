@@ -1,24 +1,14 @@
 import "./styles/App.css";
-import SearchBar from "./components/SearchBar";
 import WindowControls from "./components/WindowControl";
-import AddWebShortCut from "./components/AddWebShortCut";
-import { useState } from "react";
+import BrowserFrame from "./components/BrowserFrame";
+import TabLeiste from "./components/TabLeiste";
 
 function App() {
-  const [addWebShortCutVis, setAddWebShortCutVis] = useState(false);
-
   return (
     <>
-      <WindowControls
-        openAddWebShortCut={() => setAddWebShortCutVis(!addWebShortCutVis)}
-      ></WindowControls>
-      <SearchBar></SearchBar>
-
-      {addWebShortCutVis && (
-        <AddWebShortCut
-          closeAddWebShortCut={() => setAddWebShortCutVis(false)}
-        ></AddWebShortCut>
-      )}
+      <WindowControls></WindowControls>
+      <TabLeiste></TabLeiste>
+      <BrowserFrame></BrowserFrame>
     </>
   );
 }

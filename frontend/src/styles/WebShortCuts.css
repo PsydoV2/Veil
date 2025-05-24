@@ -29,12 +29,42 @@
 .webShortCuts button {
   height: 25px !important;
   width: 25px !important;
-  width: "1" 5px !important;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .webShortCuts button:hover {
+  background-color: var(--background-800) !important;
+}
+
+.webShortCuts .editWebShortCuts input {
+  background-color: var(--background-800);
+  border: 0;
+  outline: 0;
+  height: 25px;
+  padding-left: 5px;
+  border-radius: 5px;
+  color: var(--text-100);
+  margin-right: 5px;
+  width: 200px;
+  user-select: all !important;
+  -webkit-app-region: no-drag !important;
+}
+
+.webShortCuts .editWebShortCuts input::placeholder {
+  color: var(--text-300);
+}
+
+.webShortCuts .editWebShortCuts button {
+  margin-right: 5px;
+  height: 25px !important;
+  width: 25px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.webShortCuts .editWebShortCuts button:hover {
   background-color: var(--background-800) !important;
 }

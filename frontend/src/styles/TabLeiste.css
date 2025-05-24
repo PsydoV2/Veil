@@ -1,0 +1,26 @@
+.tabLeiste {
+  height: 30px;
+  width: calc(100% - 5px);
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  padding-left: 5px;
+}
+
+.tabLeiste button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--accent-200) !important;
+  height: 90%;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  margin-bottom: 10%;
+}
+
+.tabLeiste button:hover {
+  background-color: var(--background-800);
+  cursor: pointer;
+}
