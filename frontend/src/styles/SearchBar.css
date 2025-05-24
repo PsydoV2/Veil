@@ -3,17 +3,17 @@
   height: 50px;
   margin: auto;
   overflow: hidden;
-  background-color: var(--background-700);
+  background-color: var(--background-800);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .searchBar input {
-  width: calc(100% - 50px);
-  height: 25px !important;
+  width: calc(100% - 30px);
+  height: 30px !important;
   padding: 0 10px;
-  background-color: var(--background-800);
+  background-color: var(--background-900);
   height: 100%;
   outline: 0;
   border: 0;

@@ -1,7 +1,7 @@
 .tab {
   width: 200px;
   height: 100%;
-  background-color: var(--background-700);
+  background-color: var(--background-900);
 
   border-radius: 10px 10px 0px 0px;
 
@@ -25,4 +25,12 @@
 .tab p {
   width: 70%;
   color: var(--text-100);
+}
+
+#activeTab {
+  background-color: var(--background-800) !important;
+}
+
+#activeTab:hover {
+  background-color: var(--background-800) !important;
 }
