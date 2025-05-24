@@ -8,14 +8,6 @@ export default function TabLeiste() {
       <Tab active></Tab>
       <Tab></Tab>
       <Tab></Tab>
-      <Tab></Tab>
-      <Tab></Tab>
-      <Tab></Tab>
-      <Tab></Tab>
-      <Tab></Tab>
-      <Tab></Tab>
-      <Tab></Tab>
-      <Tab></Tab>
       <button>
         <GrAdd />
       </button>

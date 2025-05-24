@@ -10,7 +10,7 @@
 }
 
 .searchBar input {
-  width: calc(100% - 30px);
+  width: calc(100% - 100px);
   height: 30px !important;
   padding: 0 10px;
   background-color: var(--background-900);
@@ -23,4 +23,20 @@
 
 .searchBar input::placeholder {
   color: var(--text-300);
+}
+
+.searchBar button {
+  margin: 5px;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  color: var(--text-300);
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+}
+
+.searchBar button:hover {
+  background-color: var(--background-900);
 }
