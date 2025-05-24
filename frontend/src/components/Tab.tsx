@@ -2,17 +2,32 @@ import { GrClose } from "react-icons/gr";
 import "../styles/Tab.css";
 
 interface Props {
-  title?: string;
+  title: string;
   active?: boolean;
   iconUrl?: string;
+  onClick?: () => void;
+  onClose?: () => void;
 }
 
-export default function Tab(props: Props) {
+export default function Tab({
+  title,
+  active,
+  iconUrl,
+  onClick,
+  onClose,
+}: Props) {
   return (
-    <div className="tab" id={props.active ? "activeTab" : ""}>
-      <img src={props.iconUrl || "logo.png"} alt="" />
-      <p>{props.title || "New Tab"}</p>
-      <GrClose />
+    <div className="tab" id={active ? "activeTab" : ""} onClick={onClick}>
+      <img src={iconUrl || "logo.png"} alt="" />
+      <p>{title || "New Tab"}</p>
+      <button
+        onClick={(e) => {
+          e.stopPropagation(); // verhindert Tab-Wechsel beim Klick auf das X
+          onClose?.();
+        }}
+      >
+        <GrClose />
+      </button>
     </div>
   );
 }

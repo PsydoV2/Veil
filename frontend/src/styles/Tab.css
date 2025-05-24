@@ -27,6 +27,10 @@
   color: var(--text-100);
 }
 
+.tab button {
+  margin: 0 !important;
+}
+
 #activeTab {
   background-color: var(--background-800) !important;
 }
